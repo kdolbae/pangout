@@ -16,28 +16,28 @@
 /* Layout: 사진 히어로 → 3단계 사다리(새집 보호 → 구옥 복구 → 단열) → 단계별 상세(자재 비교표·공정·사진) → 원스톱 범위 → 현장 사진 → 과정·약속·FAQ → 문의 */
 :root {
   color-scheme: only light;
-  --bg: #FFFFFF;
+  --bg: #F3F6FA;
   --panel: #FFFFFF;
-  --alt: #F5F6F8;
+  --alt: #E8EEF5;
   --ink: #111418;
   --muted: #4B5563;
-  --line: #E2E5EA;
+  --line: #D7DFE9;
   --slate: #2F3E4E;
   --amber: #F0A23A;
   --amber-ink: #8A5A12;
-  --chip: #F1F3F6;
-  --night: #FFFFFF;
+  --chip: #E6ECF3;
+  --night: #F3F6FA;
   --night-2: #E9ECF0;
   --night-fg: #1B2229;
   --night-muted: #5F6C78;
-  --night-line: #E2E5EA;
+  --night-line: #D7DFE9;
   --hot: #E8890C;
-  --band: #F0A23A;
+  --band: #1F3247;
   --band-fg: #1B2229;
   --band-muted: #2A1E08;
-  --pick: #FFF6E6;
+  --pick: #FFF8EC;
   --pick-line: #F0A23A;
-  --foot: #F5F6F8;
+  --foot: #E3EAF2;
   --foot-fg: #5F6C78;
   --foot-line: #DEDBD2;
   --display: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
@@ -266,17 +266,17 @@ footer .row { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
 
 /* 밝고 선명한 디자인 (2026-11-09) */
-.top { background: rgba(255,255,255,.96); box-shadow: 0 1px 0 var(--line), 0 6px 20px rgba(17,20,24,.05); backdrop-filter: saturate(1.4) blur(8px); }
+.top { background: rgba(243,246,250,.94); box-shadow: 0 1px 0 var(--line), 0 6px 20px rgba(17,20,24,.05); backdrop-filter: saturate(1.4) blur(8px); }
 .top nav a { color: #374151; font-weight: 600; }
 .top nav a:hover { color: var(--hot); }
-.hero { background: linear-gradient(180deg, #FFFFFF 0%, #FFF7EA 100%); }
+.hero { background: linear-gradient(160deg, #F5F9FD 0%, #DCE7F3 100%); }
 .hero h1 { font-size: clamp(38px, 5.4vw, 70px); letter-spacing: -0.035em; line-height: 1.15; }
 .hero h1 .out { display: inline-block; color: #111418; background: linear-gradient(transparent 58%, #FFC766 58%); padding: 0 6px; margin-top: 16px; }
 .hero .eyebrow, .head .eyebrow, .contact .eyebrow { display: inline-block; justify-self: start; width: max-content; max-width: 100%; background: #111418; color: #FFC766; padding: 7px 12px; border-radius: 3px; font-size: 12px; letter-spacing: .1em; }
 .hero .lead { color: #374151; }
 .hero-photos .ph, .detail .ph, .gallery .ph { border-radius: 6px; box-shadow: 0 10px 30px rgba(17,20,24,.12); }
-.trust b { color: #111418; font-size: 26px; }
-.trust div { color: #2A1E08; font-weight: 500; }
+.trust b { color: #FFB547; font-size: 26px; }
+.trust div { color: #D8E2EE; font-weight: 500; }
 .head h2 { letter-spacing: -0.03em; }
 .head h2::after { content: ""; display: block; width: 56px; height: 6px; background: var(--amber); margin-top: 18px; }
 section.blk + section.blk { border-top: 0; }
@@ -287,7 +287,7 @@ section.blk + section.blk { border-top: 0; }
 .ladder { border: 0; background: transparent; gap: 14px; }
 .rung { background: #FFFFFF; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 6px 20px rgba(17,20,24,.06); }
 .rung + .rung { border-left: 1px solid var(--line); border-top: 1px solid var(--line); }
-.rung:first-child { border: 2px solid var(--amber); background: #FFF8EC; }
+.rung:first-child { border: 2px solid var(--amber); background: #FFFFFF; }
 .rung .step b { color: var(--hot); }
 .tier { border-radius: 6px; }
 .tier .amt.amt-quote { color: #111418; }
@@ -295,7 +295,7 @@ section.blk + section.blk { border-top: 0; }
 .btn-amber { background: var(--amber); color: #111418; box-shadow: 0 6px 16px rgba(240,162,58,.35); }
 .btn-amber:hover { background: #F5B45A; }
 .btn-line { border-color: #111418; color: #111418; background: #FFFFFF; }
-.contact { background: #FFF4E0; border-top: 0; }
+.contact { background: linear-gradient(160deg, #E8EFF7 0%, #DCE6F1 100%); border-top: 0; }
 .contact .lead, .channels span, .photo-guide { color: #374151; }
 .memo-form { background: #FFFFFF; border-radius: 8px; box-shadow: 0 12px 32px rgba(17,20,24,.08); }
 .field select, .field input, .field textarea { border-radius: 4px; }
