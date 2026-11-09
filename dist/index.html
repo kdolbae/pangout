@@ -11,49 +11,47 @@
 <title>팡아웃 PANG OUT</title>
 <!-- 사진은 AI로 생성한 연출 이미지(photos/). 실제 현장 사진이 생기면 같은 파일명으로 교체 -->
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
 /* Layout: 사진 히어로 → 3단계 사다리(새집 보호 → 구옥 복구 → 단열) → 단계별 상세(자재 비교표·공정·사진) → 원스톱 범위 → 현장 사진 → 과정·약속·FAQ → 문의 */
 :root {
-  --bg: #FAF8F3;
+  --bg: #FFFFFF;
   --panel: #FFFFFF;
+  --alt: #FAF9F6;
   --ink: #1B2229;
   --muted: #5F6C78;
-  --line: #D8D6CE;
+  --line: #E8E6E0;
   --slate: #2F3E4E;
   --amber: #F0A23A;
   --amber-ink: #8A5A12;
-  --chip: #E9E6DD;
+  --chip: #F4F3EF;
   --night: #FFFFFF;
   --night-2: #EEF1F3;
   --night-fg: #1B2229;
   --night-muted: #5F6C78;
-  --night-line: #E4E2DA;
+  --night-line: #EEECE6;
   --hot: #D97E0F;
-  --band: #FDF1DD;
+  --band: #FFF8EC;
   --band-fg: #1B2229;
   --band-muted: #6B5A40;
-  --pick: #EAF0F4;
+  --pick: #F4F8FB;
   --pick-line: #9FB1C1;
-  --foot: #EFEDE6;
+  --foot: #F8F7F4;
   --foot-fg: #5F6C78;
   --foot-line: #DEDBD2;
-  --display: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  --latin: "Archivo", "Noto Sans KR", "Helvetica Neue", Arial, sans-serif;
-  --body: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --display: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
+  --latin: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
+  --body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #151A1F; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
+    --bg: #151A1F; --alt: #181E24; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
     --slate: #3B4D60; --amber-ink: #F2B866; --chip: #26303A;
     --night: #0F1317; --night-2: #1A2128; --night-line: #2E3944; --night-fg: #F4F2EC; --night-muted: #A9B3BC; --hot: #F0A23A; --band: #2A2418; --band-fg: #F4F2EC; --band-muted: #CDBB9A; --pick: #243240; --pick-line: #4A6076; --foot: #0B0E11; --foot-fg: #8C979F; --foot-line: #252D34;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #151A1F; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
+  --bg: #151A1F; --alt: #181E24; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
   --slate: #3B4D60; --amber-ink: #F2B866; --chip: #26303A;
   --night: #0F1317; --night-2: #1A2128; --night-line: #2E3944; --night-fg: #F4F2EC; --night-muted: #A9B3BC; --hot: #F0A23A; --band: #2A2418; --band-fg: #F4F2EC; --band-muted: #CDBB9A; --pick: #243240; --pick-line: #4A6076; --foot: #0B0E11; --foot-fg: #8C979F; --foot-line: #252D34;
   color-scheme: dark;
@@ -86,7 +84,7 @@ a { color: inherit; }
   repeating-linear-gradient(135deg, transparent 0 14px, rgba(255,255,255,.035) 14px 15px), var(--night-2); }
 .ph.empty b { font-family: var(--latin); font-size: 12px; letter-spacing: .14em; color: var(--amber); }
 .ph.empty span { font-size: 14px; margin-top: 6px; }
-.ph figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 10px 14px; font-size: 13px; line-height: 1.5; color: #F4F2EC; background: rgba(27,34,41,.78); }
+.ph figcaption { position: absolute; left: 10px; bottom: 10px; padding: 6px 12px; font-size: 13px; line-height: 1.5; color: #1B2229; background: rgba(255,255,255,.92); border-radius: 2px; }
 .ph.empty figcaption { position: static; background: none; padding: 6px 0 0; color: var(--night-muted); }
 
 /* 상단 바 */
@@ -123,6 +121,7 @@ a { color: inherit; }
 
 section.blk { padding-block: 96px; }
 section.blk + section.blk { border-top: 1px solid var(--line); }
+section.blk:nth-of-type(even) { background: var(--alt); }
 .head { max-width: 780px; display: grid; gap: 14px; margin-bottom: 44px; }
 .head h2 { font-weight: 900; font-size: clamp(30px, 4vw, 46px); line-height: 1.25; }
 .head p { color: var(--muted); }
@@ -310,9 +309,9 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
         </div>
       </div>
       <div class="hero-photos">
-        <figure class="ph" data-slot="hero-main"><img src="photos/el-main.jpg" alt="베란다 탄성 코팅 중도 작업" loading="eager"><figcaption>베란다 탄성 코팅 중도 작업</figcaption></figure>
-        <figure class="ph" data-slot="hero-sub1"><img src="photos/old-before.jpg" alt="구옥 베란다, 들뜬 도막과 곰팡이" loading="eager"><figcaption>구옥 베란다, 들뜬 도막과 곰팡이</figcaption></figure>
-        <figure class="ph" data-slot="hero-sub2"><img src="photos/thermal.jpg" alt="열화상으로 벽 온도 진단" loading="eager"><figcaption>열화상으로 벽 온도 진단</figcaption></figure>
+        <figure class="ph" data-slot="hero-main"><img src="photos/el-main.jpg" alt="베란다 탄성 코팅 중도 작업" loading="eager" fetchpriority="high" decoding="async"><figcaption>베란다 탄성 코팅 중도 작업</figcaption></figure>
+        <figure class="ph" data-slot="hero-sub1"><img src="photos/old-before.jpg" alt="구옥 베란다, 들뜬 도막과 곰팡이" loading="eager" fetchpriority="high" decoding="async"><figcaption>구옥 베란다, 들뜬 도막과 곰팡이</figcaption></figure>
+        <figure class="ph" data-slot="hero-sub2"><img src="photos/thermal.jpg" alt="열화상으로 벽 온도 진단" loading="eager" fetchpriority="high" decoding="async"><figcaption>열화상으로 벽 온도 진단</figcaption></figure>
       </div>
     </div>
   </section>
@@ -350,7 +349,7 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
           <div class="step"><b>3</b><span>그래도 반복될 때</span></div>
           <h3>벽 속 단열로 결로의 원인 차단</h3>
           <p>코팅으로도 다시 생긴다면 벽이 차가워 결로가 생기는 것입니다. 단열층을 만들어 벽 온도를 올립니다.</p>
-          <span class="go">단열 가격 보기 →</span>
+          <span class="go">단열 시공 보기 →</span>
         </a>
       </div>
       <p class="ladder-out"><b>막고, 고치고, 바꿉니다. 그래서 <em>팡이 아웃.</em></b></p>
@@ -366,10 +365,10 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
       </div>
       <div class="detail">
         <div class="stack">
-          <figure class="ph" data-slot="el-main" style="aspect-ratio:4/3"><img src="photos/old-after.jpg" alt="탄성 코팅으로 마감한 베란다" loading="eager"><figcaption>탄성 코팅으로 마감한 베란다</figcaption></figure>
+          <figure class="ph" data-slot="el-main" style="aspect-ratio:4/3"><img src="photos/old-after.jpg" alt="탄성 코팅으로 마감한 베란다" loading="lazy" decoding="async"><figcaption>탄성 코팅으로 마감한 베란다</figcaption></figure>
           <div class="pair">
-            <figure class="ph" data-slot="el-1"><img src="photos/mold-corner.jpg" alt="벽 모서리 곰팡이 흔적 점검" loading="eager"><figcaption>곰팡이 흔적 점검</figcaption></figure>
-            <figure class="ph" data-slot="el-2"><img src="photos/el-2.jpg" alt="실금 V컷 후 탄성 퍼티 보수" loading="eager"><figcaption>실금 V컷 후 탄성 퍼티 보수</figcaption></figure>
+            <figure class="ph" data-slot="el-1"><img src="photos/mold-corner.jpg" alt="벽 모서리 곰팡이 흔적 점검" loading="lazy" decoding="async"><figcaption>곰팡이 흔적 점검</figcaption></figure>
+            <figure class="ph" data-slot="el-2"><img src="photos/el-2.jpg" alt="실금 V컷 후 탄성 퍼티 보수" loading="lazy" decoding="async"><figcaption>실금 V컷 후 탄성 퍼티 보수</figcaption></figure>
           </div>
         </div>
         <div class="prose">
@@ -458,10 +457,10 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
       <div class="detail">
         <div class="stack">
           <div class="pair">
-            <figure class="ph" data-slot="old-before"><img src="photos/old-before.jpg" alt="BEFORE · 들뜬 페인트와 곰팡이" loading="eager"><figcaption>BEFORE · 들뜬 페인트와 곰팡이</figcaption></figure>
-            <figure class="ph" data-slot="old-after"><img src="photos/old-after.jpg" alt="AFTER · 방균 탄성 코팅 후" loading="eager"><figcaption>AFTER · 방균 탄성 코팅 후</figcaption></figure>
+            <figure class="ph" data-slot="old-before"><img src="photos/old-before.jpg" alt="BEFORE · 들뜬 페인트와 곰팡이" loading="lazy" decoding="async"><figcaption>BEFORE · 들뜬 페인트와 곰팡이</figcaption></figure>
+            <figure class="ph" data-slot="old-after"><img src="photos/old-after.jpg" alt="AFTER · 방균 탄성 코팅 후" loading="lazy" decoding="async"><figcaption>AFTER · 방균 탄성 코팅 후</figcaption></figure>
           </div>
-          <figure class="ph" data-slot="old-work" style="aspect-ratio:16/9"><img src="photos/old-work.jpg" alt="스크래퍼로 기존 도막 제거" loading="eager"><figcaption>스크래퍼로 기존 도막 제거</figcaption></figure>
+          <figure class="ph" data-slot="old-work" style="aspect-ratio:16/9"><img src="photos/old-work.jpg" alt="스크래퍼로 기존 도막 제거" loading="lazy" decoding="async"><figcaption>스크래퍼로 기존 도막 제거</figcaption></figure>
         </div>
         <div class="prose">
           <h3>덧칠로는 끝나지 않는 이유</h3>
@@ -495,7 +494,7 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
         <p>공기 중 수분은 차가운 면을 만나면 물방울이 됩니다. 이것이 결로입니다. 벽 표면 온도가 이슬점보다 낮으면 어떤 코팅도 젖습니다. 이때는 벽 안쪽에 단열층을 만들어 표면 온도를 올립니다.</p>
       </div>
       <div class="detail">
-        <figure class="ph" data-slot="ins-main"><img src="photos/ins-board.jpg" alt="단열 보드 폼본드 전면 접착" loading="eager"><figcaption>단열 보드 폼본드 전면 접착</figcaption></figure>
+        <figure class="ph" data-slot="ins-main"><img src="photos/ins-board.jpg" alt="단열 보드 폼본드 전면 접착" loading="lazy" decoding="async"><figcaption>단열 보드 폼본드 전면 접착</figcaption></figure>
         <div class="prose">
           <div class="dew">
             <p class="eyebrow">Thermal report · 예시</p>
@@ -515,7 +514,7 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
         <article class="tier">
           <p class="tag"></p>
           <h3>단열 기본</h3>
-          <p class="amt">55,000<small>원 / ㎡</small></p>
+          <p class="amt amt-quote">현장 견적</p>
           <ul><li>이보드 23T + 폼본드 전면 접착</li><li>항균 코팅 1회</li><li>합지 도배</li><li>보증 3년</li></ul>
           <p class="fit">외벽 한 면, 작은 방 모서리</p>
         </article>
@@ -527,7 +526,7 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
           <p class="fit">북향 외벽 전체, 확장 발코니</p>
         </article>
       </div>
-      <p class="fine">VAT 별도 · 단열 최소 시공 450,000원 · 단열 강화와 탄성 코팅, 곰팡이 제거는 면적과 상태를 사진으로 보고 당일 견적을 드립니다.</p>
+      <p class="fine">탄성 코팅, 곰팡이 제거, 단열 모두 면적과 상태를 보고 견적을 드립니다. 사진 3장이면 당일 개략 견적, 방문 진단은 무료입니다.</p>
     </div>
   </section>
 
@@ -559,12 +558,12 @@ footer .family { border-top: 1px solid var(--foot-line); padding-top: 18px; }
         <p>시공마다 전과 후, 중간 공정을 찍어 고객께 드립니다.</p>
       </div>
       <div class="gallery">
-        <figure class="ph" data-slot="case-1"><img src="photos/el-main.jpg" alt="신축 베란다 탄성 · 입주 전" loading="eager"><figcaption>신축 베란다 탄성 · 입주 전</figcaption></figure>
-        <figure class="ph" data-slot="case-2"><img src="photos/old-work.jpg" alt="구옥 베란다 도막 제거" loading="eager"><figcaption>구옥 베란다 도막 제거</figcaption></figure>
-        <figure class="ph" data-slot="case-3"><img src="photos/mold-corner.jpg" alt="방 모서리 곰팡이 진단" loading="eager"><figcaption>방 모서리 곰팡이 진단</figcaption></figure>
-        <figure class="ph" data-slot="case-4"><img src="photos/ins-hero.jpg" alt="북향 벽 단열 시공 중" loading="eager"><figcaption>북향 벽 단열 시공 중</figcaption></figure>
-        <figure class="ph" data-slot="case-5"><img src="photos/wallpaper.jpg" alt="단열 후 도배 마감" loading="eager"><figcaption>단열 후 도배 마감</figcaption></figure>
-        <figure class="ph" data-slot="case-6"><img src="photos/after-room.jpg" alt="시공 후 인도" loading="eager"><figcaption>시공 후 인도</figcaption></figure>
+        <figure class="ph" data-slot="case-1"><img src="photos/el-main.jpg" alt="신축 베란다 탄성 · 입주 전" loading="lazy" decoding="async"><figcaption>신축 베란다 탄성 · 입주 전</figcaption></figure>
+        <figure class="ph" data-slot="case-2"><img src="photos/old-work.jpg" alt="구옥 베란다 도막 제거" loading="lazy" decoding="async"><figcaption>구옥 베란다 도막 제거</figcaption></figure>
+        <figure class="ph" data-slot="case-3"><img src="photos/mold-corner.jpg" alt="방 모서리 곰팡이 진단" loading="lazy" decoding="async"><figcaption>방 모서리 곰팡이 진단</figcaption></figure>
+        <figure class="ph" data-slot="case-4"><img src="photos/ins-hero.jpg" alt="북향 벽 단열 시공 중" loading="lazy" decoding="async"><figcaption>북향 벽 단열 시공 중</figcaption></figure>
+        <figure class="ph" data-slot="case-5"><img src="photos/wallpaper.jpg" alt="단열 후 도배 마감" loading="lazy" decoding="async"><figcaption>단열 후 도배 마감</figcaption></figure>
+        <figure class="ph" data-slot="case-6"><img src="photos/after-room.jpg" alt="시공 후 인도" loading="lazy" decoding="async"><figcaption>시공 후 인도</figcaption></figure>
       </div>
       <p class="fine">사진은 시공 과정을 보여 드리기 위한 연출 이미지입니다.</p>
     </div>
