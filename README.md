@@ -4,32 +4,27 @@
 
 ## 파일 구성
 
-- `dist/index.html`: 홈페이지 구조와 콘텐츠
-- `dist/style.css`: 데스크톱·모바일 스타일
-- `dist/app.js`: 벽 단면 설명, 예상 비용 계산, 상담 메모 작성·복사
+- `dist/index.html`: 홈페이지 전체(스타일·스크립트 포함, 한 파일)
+- `dist/photos/`: 시공 사진. 지금은 AI로 만든 연출 이미지이며, 실제 현장 사진이 생기면 같은 파일 이름으로 교체
+- `dist/jd-logo.png`: 집대리 협력업체 배너 로고
+- `wrangler.jsonc`: Cloudflare Workers 정적 배포 설정
 
 ## 실행
-
-빌드나 패키지 설치 없이 `dist/index.html`을 브라우저에서 열 수 있습니다.
-
-로컬 서버를 이용하려면:
 
 ```sh
 python -m http.server 8000 --directory dist
 ```
 
-브라우저에서 http://localhost:8000 을 엽니다. 정적 호스팅 시 배포 폴더는 `dist`입니다.
+## 배포 (Cloudflare)
 
-## 구현 사항
+```sh
+npx wrangler deploy
+```
 
-- 1440px 데스크톱 / 390px 모바일 대응
-- 상품별 ㎡ 단가와 최소 시공 금액 450,000원 적용
-- VAT 별도 금액과 포함 금액 표시
-- 시공 7단계, 보증 안내, FAQ
-- 상담용 메모 작성 및 복사
+`wrangler.jsonc`의 routes로 pangout.kr, www.pangout.kr 에 연결됩니다(도메인은 같은 Cloudflare 계정에 있어야 함).
 
-## 운영 전 확인
+## 운영 메모
 
-현재 문의 영역은 시안으로, 입력 정보를 서버로 전송하지 않습니다. 실제 상담 채널은 별도로 연결해야 합니다. 열화상 온도 수치는 설명용 예시이며 실측 사례가 아닙니다. 가격과 보증 조건은 제공된 브리프 기준으로 운영 전 확인해야 합니다.
-
-Noto Sans KR은 Google Fonts에서 불러오며, 연결이 없으면 시스템 글꼴로 표시됩니다.
+- 상담은 카카오톡 채널(https://pf.kakao.com/_jxhyZX/chat)로 연결합니다. 문의 폼은 메모를 만들어 복사만 하고 서버로 보내지 않습니다.
+- 열화상 온도 수치는 설명용 예시입니다.
+- 단열 기본 55,000원/㎡(VAT 별도, 최소 450,000원), 단열 강화와 탄성 코팅·곰팡이 제거는 현장 견적입니다.
