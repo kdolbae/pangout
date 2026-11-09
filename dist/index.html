@@ -9,11 +9,13 @@
 <meta property="og:image" content="photos/ins-hero.jpg">
 <style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>팡아웃 PANG OUT</title>
+<meta name="color-scheme" content="only light">
 <!-- 사진은 AI로 생성한 연출 이미지(photos/). 실제 현장 사진이 생기면 같은 파일명으로 교체 -->
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
 /* Layout: 사진 히어로 → 3단계 사다리(새집 보호 → 구옥 복구 → 단열) → 단계별 상세(자재 비교표·공정·사진) → 원스톱 범위 → 현장 사진 → 과정·약속·FAQ → 문의 */
 :root {
+  color-scheme: only light;
   --bg: #FFFFFF;
   --panel: #FFFFFF;
   --alt: #FAF9F6;
@@ -41,20 +43,6 @@
   --display: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
   --latin: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
   --body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", "Noto Sans KR", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #151A1F; --alt: #181E24; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
-    --slate: #3B4D60; --amber-ink: #F2B866; --chip: #26303A;
-    --night: #0F1317; --night-2: #1A2128; --night-line: #2E3944; --night-fg: #F4F2EC; --night-muted: #A9B3BC; --hot: #F0A23A; --band: #2A2418; --band-fg: #F4F2EC; --band-muted: #CDBB9A; --pick: #243240; --pick-line: #4A6076; --foot: #0B0E11; --foot-fg: #8C979F; --foot-line: #252D34;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #151A1F; --alt: #181E24; --panel: #1E252C; --ink: #ECE9E1; --muted: #A2ADB7; --line: #333E48;
-  --slate: #3B4D60; --amber-ink: #F2B866; --chip: #26303A;
-  --night: #0F1317; --night-2: #1A2128; --night-line: #2E3944; --night-fg: #F4F2EC; --night-muted: #A9B3BC; --hot: #F0A23A; --band: #2A2418; --band-fg: #F4F2EC; --band-muted: #CDBB9A; --pick: #243240; --pick-line: #4A6076; --foot: #0B0E11; --foot-fg: #8C979F; --foot-line: #252D34;
-  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
