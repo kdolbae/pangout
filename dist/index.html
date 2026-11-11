@@ -299,6 +299,22 @@ section.blk + section.blk { border-top: 0; }
 .contact .lead, .channels span, .photo-guide { color: #374151; }
 .memo-form { background: #FFFFFF; border-radius: 8px; box-shadow: 0 12px 32px rgba(17,20,24,.08); }
 .field select, .field input, .field textarea { border-radius: 4px; }
+.tel-top { display: inline-flex; align-items: center; gap: 6px; font-family: var(--latin); font-weight: 800; font-size: 18px; color: #111418; text-decoration: none; letter-spacing: .01em; }
+.tel-top svg { width: 18px; height: 18px; color: var(--hot); }
+.channels b a { color: inherit; text-decoration: none; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.cta-row .kk-btn { margin-top: 0; }
+.foot-tel { font-weight: 700; color: var(--ink); }
+.foot-tel a { color: inherit; font-family: var(--latin); font-size: 18px; text-decoration: none; }
+.callbar { display: none; }
+@media (max-width: 820px) {
+  .tel-top { font-size: 15px; margin-left: auto; }
+  .top .tel-top + .btn { display: none; }
+  .callbar { display: grid; grid-template-columns: 1fr 1fr; position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding-bottom: env(safe-area-inset-bottom, 0px); background: #111418; box-shadow: 0 -4px 16px rgba(0,0,0,.15); }
+  .callbar a { display: flex; align-items: center; justify-content: center; min-height: 56px; font-weight: 800; font-size: 16px; text-decoration: none; color: #111418; background: var(--amber); }
+  .callbar a + a { background: #FEE500; color: #191919; }
+  body { padding-bottom: 56px; }
+}
 @media (max-width: 820px) { .top nav { flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; scrollbar-width: none; } .top nav::-webkit-scrollbar { display: none; } .top .wrap { min-height: 0; gap: 4px 12px; } .top .btn { min-height: 40px; padding: 0 12px; font-size: 14px; } .brand span { display: none; } }
 </style>
 
@@ -320,6 +336,7 @@ section.blk + section.blk { border-top: 0; }
       <a href="#cases">현장</a>
       <a href="#faq">FAQ</a>
     </nav>
+    <a class="tel-top" href="tel:18005507" aria-label="전화 상담 1800-5507"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg>1800-5507</a>
     <a class="btn btn-amber" href="#contact">사진 3장으로 견적</a>
   </div>
 </header>
@@ -333,6 +350,7 @@ section.blk + section.blk { border-top: 0; }
         <p class="lead">방 모서리, 북향 외벽, 붙박이장 뒤처럼 곰팡이가 반복되는 곳은 벽이 차가워 결로가 생기는 자리입니다. 팡아웃은 곰팡이를 완벽하게 제거한 뒤 단열로 원인을 막고, 도배까지 한 팀이 끝냅니다.</p>
         <div class="cta">
           <a class="btn btn-amber" href="#contact">사진 3장으로 당일 견적</a>
+          <a class="btn btn-line" href="tel:18005507">전화 1800-5507</a>
           <a class="btn btn-line" href="#insul">왜 단열이어야 할까</a>
         </div>
       </div>
@@ -671,11 +689,13 @@ section.blk + section.blk { border-top: 0; }
     <div>
       <p class="eyebrow">Let's start</p>
       <h2>시작은, 사진 3장이면 됩니다.</h2>
-      <p class="lead">상담은 카카오톡 채널에서 받습니다. 아래에서 상담 메모를 만들어 복사한 뒤, 사진 3장과 함께 보내 주세요. 당일 답변드립니다.</p>
+      <p class="lead">전화 1800-5507 또는 카카오톡 채널로 상담받습니다. 카카오톡은 아래에서 상담 메모를 만들어 복사한 뒤, 사진 3장과 함께 보내 주세요. 당일 답변드립니다.</p>
       <div class="channels">
+        <div><span>전화 상담</span><b><a href="tel:18005507">1800-5507</a></b></div>
         <div><span>카카오톡 채널</span><b class="kk-url">pf.kakao.com/_jxhyZX</b></div>
       </div>
-      <a class="btn btn-amber kk-btn" href="https://pf.kakao.com/_jxhyZX/chat" target="_blank" rel="noopener">카카오톡으로 상담하기</a>
+      <div class="cta-row"><a class="btn btn-amber" href="tel:18005507">1800-5507 전화하기</a>
+      <a class="btn btn-amber kk-btn" href="https://pf.kakao.com/_jxhyZX/chat" target="_blank" rel="noopener">카카오톡으로 상담하기</a></div>
       <div class="photo-guide">
         <p><b>1</b>문제 부위 전체</p>
         <p><b>2</b>벽 표면 가까이</p>
@@ -723,9 +743,12 @@ section.blk + section.blk { border-top: 0; }
       <b>PANG OUT</b>
     </a>
     <p>벽을 데우고, 뿌리까지 걷어 냅니다. 그래서 팡이 아웃.</p>
+    <p class="foot-tel">상담 전화 <a href="tel:18005507">1800-5507</a></p>
     <div class="row family"><span>팡아웃은 집대리 협력업체입니다.</span></div>
   </div>
 </footer>
+
+<nav class="callbar" aria-label="빠른 상담"><a href="tel:18005507">전화 1800-5507</a><a href="https://pf.kakao.com/_jxhyZX/chat" target="_blank" rel="noopener">카카오톡 상담</a></nav>
 
 <script>
 (function () {
